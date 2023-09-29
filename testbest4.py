@@ -22,7 +22,8 @@ GT honor code violation.
 -----do not edit anything above this line---  		  	   		  		 		  		  		    	 		 		   		 		  
 """  		  	   		  		 		  		  		    	 		 		   		 		  
   		  	   		  		 		  		  		    	 		 		   		 		  
-import math  		  	   		  		 		  		  		    	 		 		   		 		  
+import math
+import random  		  	   		  		 		  		  		    	 		 		   		 		  
   		  	   		  		 		  		  		    	 		 		   		 		  
 import numpy as np  		  	   		  		 		  		  		    	 		 		   		 		  
   		  	   		  		 		  		  		    	 		 		   		 		  
@@ -114,7 +115,42 @@ def test_code():
         print("DT < 0.9 LR:  pass")  		  	   		  		 		  		  		    	 		 		   		 		  
     else:  		  	   		  		 		  		  		    	 		 		   		 		  
         print("DT >= 0.9 LR:  fail")  		  	   		  		 		  		  		    	 		 		   		 		  
-    print  		  	   		  		 		  		  		    	 		 		   		 		  
+    print  		  
+    
+    while True:
+        x, y = best_4_dt(random.randint(1, 1489683273))
+
+        # compare the two learners
+        rmse_lr, rmse_dt = compare_os_rmse(lrlearner, dtlearner, x, y)
+
+        # share results
+        print()
+        print("best_4_dt() results")
+        print(f"RMSE LR    : {rmse_lr}")
+        print(f"RMSE DT    : {rmse_dt}")
+        if rmse_dt < 0.9 * rmse_lr:
+            print("DT < 0.9 LR:  pass")
+        else:
+            print("DT >= 0.9 LR:  fail")
+            break
+        print	   
+    while True:
+        x, y = best_4_lin_reg(random.randint(1, 1489683273))
+
+        # compare the two learners
+        rmse_lr, rmse_dt = compare_os_rmse(lrlearner, dtlearner, x, y)
+
+        # share results
+        print()  		  	   		  		 		  		  		    	 		 		   		 		  
+        print("best_4_lin_reg() results")  		  	   		  		 		  		  		    	 		 		   		 		  
+        print(f"RMSE LR    : {rmse_lr}")  		  	   		  		 		  		  		    	 		 		   		 		  
+        print(f"RMSE DT    : {rmse_dt}")  		  	   		  		 		  		  		    	 		 		   		 		  
+        if rmse_lr < 0.9 * rmse_dt:  		  	   		  		 		  		  		    	 		 		   		 		  
+            print("LR < 0.9 DT:  pass")  		  	   		  		 		  		  		    	 		 		   		 		  
+        else:  		  	   		  		 		  		  		    	 		 		   		 		  
+            print("LR >= 0.9 DT:  fail")  
+            break		  	   		  		 		  		  		    	 		 		   		 		  
+        print  		  		 		  		  		    	 		 		   		 		  
   		  	   		  		 		  		  		    	 		 		   		 		  
   		  	   		  		 		  		  		    	 		 		   		 		  
 if __name__ == "__main__":  		  	   		  		 		  		  		    	 		 		   		 		  

@@ -1,65 +1,26 @@
-""""""  		  	   		  		 		  		  		    	 		 		   		 		  
-"""  		  	   		  		 		  		  		    	 		 		   		 		  
-A simple wrapper for linear regression.  (c) 2015 Tucker Balch  		  	   		  		 		  		  		    	 		 		   		 		  
-Note, this is NOT a correct DTLearner; Replace with your own implementation.  		  	   		  		 		  		  		    	 		 		   		 		  
-Copyright 2018, Georgia Institute of Technology (Georgia Tech)  		  	   		  		 		  		  		    	 		 		   		 		  
-Atlanta, Georgia 30332  		  	   		  		 		  		  		    	 		 		   		 		  
-All Rights Reserved  		  	   		  		 		  		  		    	 		 		   		 		  
-  		  	   		  		 		  		  		    	 		 		   		 		  
-Template code for CS 4646/7646  		  	   		  		 		  		  		    	 		 		   		 		  
-  		  	   		  		 		  		  		    	 		 		   		 		  
-Georgia Tech asserts copyright ownership of this template and all derivative  		  	   		  		 		  		  		    	 		 		   		 		  
-works, including solutions to the projects assigned in this course. Students  		  	   		  		 		  		  		    	 		 		   		 		  
-and other users of this template code are advised not to share it with others  		  	   		  		 		  		  		    	 		 		   		 		  
-or to make it available on publicly viewable websites including repositories  		  	   		  		 		  		  		    	 		 		   		 		  
-such as github and gitlab.  This copyright statement should not be removed  		  	   		  		 		  		  		    	 		 		   		 		  
-or edited.  		  	   		  		 		  		  		    	 		 		   		 		  
-  		  	   		  		 		  		  		    	 		 		   		 		  
-We do grant permission to share solutions privately with non-students such  		  	   		  		 		  		  		    	 		 		   		 		  
-as potential employers. However, sharing with other current or future  		  	   		  		 		  		  		    	 		 		   		 		  
-students of CS 7646 is prohibited and subject to being investigated as a  		  	   		  		 		  		  		    	 		 		   		 		  
-GT honor code violation.  		  	   		  		 		  		  		    	 		 		   		 		  
-  		  	   		  		 		  		  		    	 		 		   		 		  
------do not edit anything above this line---  		  	   		  		 		  		  		    	 		 		   		 		  
-  		  	   		  		 		  		  		    	 		 		   		 		  
-Student Name: Tucker Balch (replace with your name)  		  	   		  		 		  		  		    	 		 		   		 		  
-GT User ID: tb34 (replace with your User ID)  		  	   		  		 		  		  		    	 		 		   		 		  
-GT ID: 900897987 (replace with your GT ID)  		  	   		  		 		  		  		    	 		 		   		 		  
-"""  		  	   		  		 		  		  		    	 		 		   		 		  
-  		  	   		  		 		  		  		    	 		 		   		 		  
-import warnings  		  	   		  		 		  		  		    	 		 		   		 		  
-  		  	   		  		 		  		  		    	 		 		   		 		  
-import numpy as np  		  	   		  		 		  		  		    	 		 		   		 		  
-  		  	   		  		 		  		  		    	 		 		   		 		  
-  		  	   		  		 		  		  		    	 		 		   		 		  
-class DTLearner(object):  		  	   		  		 		  		  		    	 		 		   		 		  
+import numpy as np  
+
+class DTLearner(object):	  	   		  		 		  		  		    	 		 		   		 		  
     """  		  	   		  		 		  		  		    	 		 		   		 		  
-    This is a decision tree learner object that is implemented incorrectly. You should replace this DTLearner with  		  	   		  		 		  		  		    	 		 		   		 		  
-    your own correct DTLearner from Project 3.  		  	   		  		 		  		  		    	 		 		   		 		  
+    This is a Decision Tree Regression Learner. It is implemented correctly.  		  	   		  		 		  		  		    	 		 		   		 		  
   		  	   		  		 		  		  		    	 		 		   		 		  
-    :param leaf_size: The maximum number of samples to be aggregated at a leaf, defaults to 1.  		  	   		  		 		  		  		    	 		 		   		 		  
-    :type leaf_size: int  		  	   		  		 		  		  		    	 		 		   		 		  
     :param verbose: If “verbose” is True, your code can print out information for debugging.  		  	   		  		 		  		  		    	 		 		   		 		  
         If verbose = False your code should not generate ANY output. When we test your code, verbose will be False.  		  	   		  		 		  		  		    	 		 		   		 		  
     :type verbose: bool  		  	   		  		 		  		  		    	 		 		   		 		  
     """  		  	   		  		 		  		  		    	 		 		   		 		  
-  		  	   		  		 		  		  		    	 		 		   		 		  
-    def __init__(self, leaf_size=1, verbose=False):  		  	   		  		 		  		  		    	 		 		   		 		  
+    def __init__(self, leaf_size = 1, verbose=False):  		  	   		  		 		  		  		    	 		 		   		 		  
         """  		  	   		  		 		  		  		    	 		 		   		 		  
         Constructor method  		  	   		  		 		  		  		    	 		 		   		 		  
-        """  		  	   		  		 		  		  		    	 		 		   		 		  
-        warnings.warn(  		  	   		  		 		  		  		    	 		 		   		 		  
-            "\n\n  WARNING! THIS IS NOT A CORRECT DTLearner IMPLEMENTATION!"  		  	   		  		 		  		  		    	 		 		   		 		  
-            " REPLACE WITH YOUR OWN CODE\n"  		  	   		  		 		  		  		    	 		 		   		 		  
-        )  		  	   		  		 		  		  		    	 		 		   		 		  
-        pass  # move along, these aren't the drones you're looking for  		  	   		  		 		  		  		    	 		 		   		 		  
-  		  	   		  		 		  		  		    	 		 		   		 		  
+        """  		  	   	
+        self.leaf_size = leaf_size
+        self.vrbose = verbose
+           		  	   		  		 		  		  		    	 		 		   		 		  
     def author(self):  		  	   		  		 		  		  		    	 		 		   		 		  
         """  		  	   		  		 		  		  		    	 		 		   		 		  
         :return: The GT username of the student  		  	   		  		 		  		  		    	 		 		   		 		  
         :rtype: str  		  	   		  		 		  		  		    	 		 		   		 		  
         """  		  	   		  		 		  		  		    	 		 		   		 		  
-        return "tb34"  # replace tb34 with your Georgia Tech username  		  	   		  		 		  		  		    	 		 		   		 		  
+        return "agandhi301"  		  	   		  		 		  		  		    	 		 		   		 		  
   		  	   		  		 		  		  		    	 		 		   		 		  
     def add_evidence(self, data_x, data_y):  		  	   		  		 		  		  		    	 		 		   		 		  
         """  		  	   		  		 		  		  		    	 		 		   		 		  
@@ -69,18 +30,35 @@ class DTLearner(object):
         :type data_x: numpy.ndarray  		  	   		  		 		  		  		    	 		 		   		 		  
         :param data_y: The value we are attempting to predict given the X data  		  	   		  		 		  		  		    	 		 		   		 		  
         :type data_y: numpy.ndarray  		  	   		  		 		  		  		    	 		 		   		 		  
-        """  		  	   		  		 		  		  		    	 		 		   		 		  
+        """
+        data_y = np.array([data_y])
+        data = np.append(data_x, data_y.T, axis=1)
+        self.tree = self.build_tree(data)
+
+    def build_tree(self, data):
+        data_x = data[:, 0:-1]
+        data_y = data[:, -1]
+        if data.shape[0] == 1 or data.shape[0] <= self.leaf_size:
+            return np.array([['leaf', np.mean(data_y), None, None]])
+        elif np.all(data_y == data_y[0]):
+            return np.array([['leaf', data_y[0], None, None]])
+        else: 
+            correlations = []
+            for feature in range(data_x.shape[1]):
+                correlations.append(abs(np.corrcoef(data_x[:, feature], data_y)[0, 1]))
+            best_feature_index = np.argmax(correlations)
+            splitVal = np.median(data[:, best_feature_index])
+            maximum_value = np.max(data[:, best_feature_index])
+            
+            if maximum_value == splitVal:
+                return np.array([['leaf', np.mean(data[:, -1]), None, None]])
+            
+            left_tree = self.build_tree(data[data[:, best_feature_index] <= splitVal])
+            right_tree = self.build_tree(data[data[:, best_feature_index] > splitVal])
+            root = np.array([[best_feature_index, splitVal, 1, left_tree.shape[0] + 1]])
+            return np.append(root, np.append(left_tree, right_tree, axis=0), axis=0)         
   		  	   		  		 		  		  		    	 		 		   		 		  
-        # slap on 1s column so linear regression finds a constant term  		  	   		  		 		  		  		    	 		 		   		 		  
-        new_data_x = np.ones([data_x.shape[0], data_x.shape[1] + 1])  		  	   		  		 		  		  		    	 		 		   		 		  
-        new_data_x[:, 0 : data_x.shape[1]] = data_x  		  	   		  		 		  		  		    	 		 		   		 		  
-  		  	   		  		 		  		  		    	 		 		   		 		  
-        # build and save the model  		  	   		  		 		  		  		    	 		 		   		 		  
-        self.model_coefs, residuals, rank, s = np.linalg.lstsq(  		  	   		  		 		  		  		    	 		 		   		 		  
-            new_data_x, data_y, rcond=None  		  	   		  		 		  		  		    	 		 		   		 		  
-        )  		  	   		  		 		  		  		    	 		 		   		 		  
-  		  	   		  		 		  		  		    	 		 		   		 		  
-    def query(self, points):  		  	   		  		 		  		  		    	 		 		   		 		  
+    def query(self, features):  		  	   		  		 		  		  		    	 		 		   		 		  
         """  		  	   		  		 		  		  		    	 		 		   		 		  
         Estimate a set of test points given the model we built.  		  	   		  		 		  		  		    	 		 		   		 		  
   		  	   		  		 		  		  		    	 		 		   		 		  
@@ -88,11 +66,22 @@ class DTLearner(object):
         :type points: numpy.ndarray  		  	   		  		 		  		  		    	 		 		   		 		  
         :return: The predicted result of the input data according to the trained model  		  	   		  		 		  		  		    	 		 		   		 		  
         :rtype: numpy.ndarray  		  	   		  		 		  		  		    	 		 		   		 		  
-        """  		  	   		  		 		  		  		    	 		 		   		 		  
-        return (self.model_coefs[:-1] * points).sum(axis=1) + self.model_coefs[  		  	   		  		 		  		  		    	 		 		   		 		  
-            -1  		  	   		  		 		  		  		    	 		 		   		 		  
-        ]  		  	   		  		 		  		  		    	 		 		   		 		  
-  		  	   		  		 		  		  		    	 		 		   		 		  
+        """  		  	
+        predicted_value = []
+        for feature in features:
+            row = 0
+            node = self.tree[row,0]
+            while (node != "leaf"): # if it is not a leaf node, enter loop
+                splitVal = self.tree[row, 1]
+                left = int(self.tree[row, 2])
+                right = int(self.tree[row, 3])
+                if(feature[int(node)] <= splitVal):
+                    row = row + left
+                else:
+                    row = row + right
+                node = self.tree[row,0]
+            predicted_value.append(self.tree[row,1])
+        return predicted_value		 		   		 		  
   		  	   		  		 		  		  		    	 		 		   		 		  
 if __name__ == "__main__":  		  	   		  		 		  		  		    	 		 		   		 		  
-    print("the secret clue is 'zzyzx'")  		  	   		  		 		  		  		    	 		 		   		 		  
+    print("Running DT Learner")  		  	   		  		 		  		  		    	 		 		   		 		  

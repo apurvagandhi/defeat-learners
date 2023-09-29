@@ -21,19 +21,16 @@ GT honor code violation.
   		  	   		  		 		  		  		    	 		 		   		 		  
 -----do not edit anything above this line---  		  	   		  		 		  		  		    	 		 		   		 		  
   		  	   		  		 		  		  		    	 		 		   		 		  
-Student Name: Tucker Balch (replace with your name)  		  	   		  		 		  		  		    	 		 		   		 		  
-GT User ID: tb34 (replace with your User ID)  		  	   		  		 		  		  		    	 		 		   		 		  
-GT ID: 900897987 (replace with your GT ID)  		  	   		  		 		  		  		    	 		 		   		 		  
+Student Name: Apurva Gandhi  	   		  		 		  		  		    	 		 		   		 		  
+GT User ID: agandhi301		  	   		  		 		  		  		    	 		 		   		 		  
+GT ID: 903862828	  	   		  		 		  		  		    	 		 		   		 		  
 """  		  	   		  		 		  		  		    	 		 		   		 		  
   		  	   		  		 		  		  		    	 		 		   		 		  
-import math  		  	   		  		 		  		  		    	 		 		   		 		  
-  		  	   		  		 		  		  		    	 		 		   		 		  
-import numpy as np  		  	   		  		 		  		  		    	 		 		   		 		  
-  		  	   		  		 		  		  		    	 		 		   		 		  
+import numpy as np  		  	   		  		 		  		  		    	 		 		   		 		    		  	   		  		 		  		  		    	 		 		   		 		  
   		  	   		  		 		  		  		    	 		 		   		 		  
 # this function should return a dataset (X and Y) that will work  		  	   		  		 		  		  		    	 		 		   		 		  
 # better for linear regression than decision trees  		  	   		  		 		  		  		    	 		 		   		 		  
-def best_4_lin_reg(seed=1489683273):  		  	   		  		 		  		  		    	 		 		   		 		  
+def best_4_lin_reg(seed=903862828):  		  	   		  		 		  		  		    	 		 		   		 		  
     """  		  	   		  		 		  		  		    	 		 		   		 		  
     Returns data that performs significantly better with LinRegLearner than DTLearner.  		  	   		  		 		  		  		    	 		 		   		 		  
     The data set should include from 2 to 10 columns in X, and one column in Y.  		  	   		  		 		  		  		    	 		 		   		 		  
@@ -43,15 +40,13 @@ def best_4_lin_reg(seed=1489683273):
     :type seed: int  		  	   		  		 		  		  		    	 		 		   		 		  
     :return: Returns data that performs significantly better with LinRegLearner than DTLearner.  		  	   		  		 		  		  		    	 		 		   		 		  
     :rtype: numpy.ndarray  		  	   		  		 		  		  		    	 		 		   		 		  
-    """  		  	   		  		 		  		  		    	 		 		   		 		  
-    np.random.seed(seed)  		  	   		  		 		  		  		    	 		 		   		 		  
-    x = np.zeros((100, 2))  		  	   		  		 		  		  		    	 		 		   		 		  
-    y = np.random.random(size=(100,)) * 200 - 100  		  	   		  		 		  		  		    	 		 		   		 		  
-    # Here's is an example of creating a Y from randomly generated  		  	   		  		 		  		  		    	 		 		   		 		  
-    # X with multiple columns  		  	   		  		 		  		  		    	 		 		   		 		  
-    # y = x[:,0] + np.sin(x[:,1]) + x[:,2]**2 + x[:,3]**3  		  	   		  		 		  		  		    	 		 		   		 		  
+    """  		  	
+    np.random.seed(seed)	 		  		  		    	 		 		   		 		  
+    # Generate X with random values	  		 		  		  		    	 		 		   		 		  
+    x = np.random.rand(999, 3)  	
+    # Create a linear relationship between features and target variable Y
+    y = 2 * x[:, 0] + 3 * x[:, 1] + 4 * x[:, 2]	
     return x, y  		  	   		  		 		  		  		    	 		 		   		 		  
-  		  	   		  		 		  		  		    	 		 		   		 		  
   		  	   		  		 		  		  		    	 		 		   		 		  
 def best_4_dt(seed=1489683273):  		  	   		  		 		  		  		    	 		 		   		 		  
     """  		  	   		  		 		  		  		    	 		 		   		 		  
@@ -64,19 +59,19 @@ def best_4_dt(seed=1489683273):
     :return: Returns data that performs significantly better with DTLearner than LinRegLearner.  		  	   		  		 		  		  		    	 		 		   		 		  
     :rtype: numpy.ndarray  		  	   		  		 		  		  		    	 		 		   		 		  
     """  		  	   		  		 		  		  		    	 		 		   		 		  
-    np.random.seed(seed)  		  	   		  		 		  		  		    	 		 		   		 		  
-    x = np.zeros((100, 2))  		  	   		  		 		  		  		    	 		 		   		 		  
-    y = np.random.random(size=(100,)) * 200 - 100  		  	   		  		 		  		  		    	 		 		   		 		  
-    return x, y  		  	   		  		 		  		  		    	 		 		   		 		  
-  		  	   		  		 		  		  		    	 		 		   		 		  
+    np.random.seed(seed)  
+    # Generate X with random values	  		 		  		  		    	 		 		   		 		  
+    x = np.random.rand(999, 3)  	
+    # Create a non-linear relationship between features and target variable Y
+    y = x[:, 0] ** 2 + x[:, 1] ** 3 + x[:, 2] ** 4    
+    return x, y  		  	   		  		 		  		  		    	 		 		   		 		    	   		  		 		  		  		    	 		 		   		 		  
   		  	   		  		 		  		  		    	 		 		   		 		  
 def author():  		  	   		  		 		  		  		    	 		 		   		 		  
     """  		  	   		  		 		  		  		    	 		 		   		 		  
     :return: The GT username of the student  		  	   		  		 		  		  		    	 		 		   		 		  
     :rtype: str  		  	   		  		 		  		  		    	 		 		   		 		  
     """  		  	   		  		 		  		  		    	 		 		   		 		  
-    return "tb34"  # Change this to your user ID  		  	   		  		 		  		  		    	 		 		   		 		  
-  		  	   		  		 		  		  		    	 		 		   		 		  
+    return "agandhi301"  # Change this to your user ID  		  	   		  		 		  		  		    	 		 		   		 		   	   		  		 		  		  		    	 		 		   		 		  
   		  	   		  		 		  		  		    	 		 		   		 		  
 if __name__ == "__main__":  		  	   		  		 		  		  		    	 		 		   		 		  
-    print("they call me Tim.")  		  	   		  		 		  		  		    	 		 		   		 		  
+    pass
